@@ -1,5 +1,5 @@
 # Student Buddy
-Use our tool to intellignetly search courses online or quickly finish your projects.
+Use our tool to intelligently search courses online or quickly finish your projects.
 
 # Installation
 
