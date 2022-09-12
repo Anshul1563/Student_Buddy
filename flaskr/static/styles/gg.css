@@ -1,0 +1,89 @@
+/*.first{
+    background-image: url('img1.jpg');
+    padding: 300px 105px;
+    margin: 0px;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.second{
+    background-image: url('img2.jpg');
+    padding: 350px;
+    margin: 0px;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+}*/
+
+/*.flexbox-container1{
+    background-image: url('headerimg.jpg');
+    padding: 1000px 650px;
+    margin: 0px;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+}*/
+
+.container{
+    background-image: url('background.jpg');
+    padding-top: 15%;
+    padding-bottom: 15%;
+    margin-left: 0%;
+    padding-right: 7%;
+    margin-bottom: 0%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: aliceblue;
+
+    text-align: center;
+    font-size: x-large;
+    font-family: "Papyrus", fantasy;
+}
+.row1{
+    /*background-image: url('pt.jpg'),url('ie.jpg'),url('gp.jpg');
+    background-position: top left, bottom center, top right;
+    padding-top: 0%;
+    padding-bottom: 0%;
+    background-size: 488px 300px,488px 300px ,488px 300px;
+    background-repeat: no-repeat;
+    margin: 0%;*/
+
+    background-image: url('pt.jpg'),url('ct.jpg');
+    background-position:  left, right;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-size: 740px 500px,740px 500px;
+    background-repeat: no-repeat;
+    margin: 0%;
+
+    font-size: x-large;
+    font-family: "Papyrus", fantasy;
+}
+.prjct{
+    text-align: left;
+    margin:0%;
+}
+.crs{
+    text-align: right;
+}
+.row2{
+    background-image: url('mt.jpg'),url('nt.jpg');
+    background-position:  left, right;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-size: 740px 500px,740px 500px;
+    background-repeat: no-repeat;
+    margin: 0%;
+
+    font-size: x-large;
+    font-family: "Papyrus", fantasy;
+}
+.math{
+    text-align: left;
+}
+.news{
+    text-align: right;
+}
+a:link{
+    color: black;
+}

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Course Info</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container-fluid " style="height:1000px ;">
+      <div class="row justify-content-end align-items-center mt-4 mx-4">
+        <h1 class="mx-5 col-auto fw-bold" style="font-family: 'Jost', sans-serif;"> Course Library </h1>
+        <div class="col-auto">
+          <button type="button" class="btn btn-outline-success"><a  href="{{ url_for("home_page")}}">Home</a>
+          </button>
+        </div>
+        
+      </div>
+      <div class="row mx-4 my-5 justify-content-between align-items-center border border-2 border-success rounded-5">
+        <div class="w-25">
+          <form action="{{ url_for("course_page")}}" method="post" class="row align-items-center px-3 p-2">
+            <label for="searchInput" class="form-label mb-0"></label>
+            <input type="search" class="form-control" id="searchInput" placeholder="Search here.." name = 'course'>
+          </form>
+        </div>
+        <div class="col-auto ">
+          <form action="{{ url_for("course_page")}}" method="post" class="col-auto my-2 ">
+            <button type="submit" name = "1" class="btn col-auto btn-outline-info me-2">Udemy</button>
+            <button type="submit" name = "3" class="btn btn-outline-primary col-auto mx-2">Edx</button>
+            
+            <button type="submit" name = "4" class="btn btn-outline-dark col-auto mx-2">Coursera</button>
+          </form>
+        </div>
+      </div>
+      <div class="row mx-4 shadow-lg row row-cols-4 p-4 justify-content-start overflow-auto bg-light " style="height: 600px;" id ="content">
+        
+        {% for x in range(items['title']|length) %}
+        <div class="col mb-4">
+              <div class="card shadow-sm" style="width: 20rem;">
+                <img src={{items['pic'][x]}} class="card-img-top" alt="...">
+                <h5 class ="card-header fw-bold" >{{items['title'][x]}}</h5>
+                
+                <ul class="list-group list-group-flush" id = "c{{x}}">
+                  {% if items['students'][x]  %}
+                  <li class="list-group-item">{{items['students'][x] }} hours
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-stopwatch mb-1" viewBox="0 0 16 16">
+                      <path d="M8.5 5.6a.5.5 0 1 0-1 0v2.9h-3a.5.5 0 0 0 0 1H8a.5.5 0 0 0 .5-.5V5.6z"/>
+                      <path d="M6.5 1A.5.5 0 0 1 7 .5h2a.5.5 0 0 1 0 1v.57c1.36.196 2.594.78 3.584 1.64a.715.715 0 0 1 .012-.013l.354-.354-.354-.353a.5.5 0 0 1 .707-.708l1.414 1.415a.5.5 0 1 1-.707.707l-.353-.354-.354.354a.512.512 0 0 1-.013.012A7 7 0 1 1 7 2.071V1.5a.5.5 0 0 1-.5-.5zM8 3a6 6 0 1 0 .001 12A6 6 0 0 0 8 3z"/>
+                    </svg>
+                  </li>
+                  {% endif %}
+                  <li class="list-group-item">{{items['cost'][x]}}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill mb-1" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                  </li>
+                  <li class="list-group-item">{{items['time'][x]}}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill mb-1" viewBox="0 0 16 16">
+                      <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                    </svg>
+                  </li>
+                  
+                </ul>
+                <div class="card-footer">
+                  <a href='{{items['link'][x]}}' target="_blank" class="btn" style= "background-color: rgb(233, 151, 233);">Course Page</a>    
+                </div>
+              </div>
+        </div>
+        {% endfor %}
+      </div>
+
+    </div>
+    <!-- <script type="text/javascript" src="{{url_for('static', filename='js/courses.js')}}"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title >math buddy</title>
+    <style>
+       
+        h1{
+            text-align: center;
+        }
+        
+        .container-fluid
+        {
+          background-image: url("./static/styles/mathbckgrnd.jpg");
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  </head>
+  <body>
+    
+    <div class="container-fluid vh-100"><br><br><br><br><br><br><h1 style = 'color:white;'>MATH BUDDY</h1><br><br><br>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+        <div class="row row-col-2 justify-content-center mx-3 rounded-4">
+            <div class="col card w-75 rounded-3">
+            <div class=" card-body">
+              <h5 class="card-title">Differentiation </h5>
+              <p class="card-text">Enter your equation to a get a quick solution. </p>
+              <form action="{{ url_for("math_page")}}" method="post" >
+              <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">Equation</span>
+                  <input type="text"name = "eq1" class="form-control" placeholder="Type here..." aria-label="Username" aria-describedby="addon-wrapping">
+              </div>
+              <br>
+              <button class="btn btn-primary" name = 'b1' type = "submit">submit</button><br><br>
+                </form>
+              <h5 class="p-2 card-text border border-primary rounded-4"> Solution : {{eq1}}  </h5> 
+            </div>
+          </div>
+          
+          <div class="col card w-50">
+            <div class="card-body">
+              <h5 class="card-title">Integration</h5>
+              <p class="card-text">An easy integration tool to solve all your problems</p>
+              <form action="{{ url_for("math_page")}}" method="post" >
+                <div class="input-group flex-nowrap">
+                  <span class="input-group-text" id="addon-wrapping">Equation</span>
+                    <input type="text"name = "eq2" class="form-control" placeholder="Type here..." aria-label="Username" aria-describedby="addon-wrapping">
+                </div>
+                <br>
+                <button class="btn btn-primary" name = 'b2' type = "submit">submit</button><br><br>
+                  </form>
+                <h5 class="p-2 card-text border border-primary rounded-4"> Solution : {{eq2}}  </h5> 
+            </div>
+          </div>
+
+          <div class="col card w-50">
+            <div class="card-body">
+              <h5 class="card-title">Solving linear differential equations</h5>
+              <p class="card-text">Enter your differential equation to get the solution.</p>
+              <form action="{{ url_for("math_page")}}" method="post" >
+                <div class="input-group flex-nowrap">
+                  <span class="input-group-text" id="addon-wrapping">Equation</span>
+                    <input type="text"name = "eq3" class="form-control" placeholder="Type here..." aria-label="Username" aria-describedby="addon-wrapping">
+                </div>
+                <br>
+                <button class="btn btn-primary" name = 'b3' type = "submit">submit</button><br><br>
+                  </form>
+                
+            </div>
+        </div>
+    
+  </body>
+</html>

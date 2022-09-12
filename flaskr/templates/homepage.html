@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUDENT BUDDY</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/gg.css') }}"
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to
+        STUDENT BUDDY</h1>
+    </div>
+
+    <div>
+        <div class="row1">
+            <h2 class="prjct"><a href="{{ url_for("project_page")}}" class="fill-div">Project Tool</a></h2>
+            <h2 class="crs"><a href="{{ url_for("course_page")}}">Course Tool</a> </h2>
+        </div>
+        <div class="row2">
+            <h2 class="math"><a href="{{ url_for("math_page")}}">Math Tool</a></h2>
+            <h2 class="news"><a href="{{ url_for("news_page")}}">News Tool</a></h2>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
