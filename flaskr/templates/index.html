@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='dist/output.css')}}" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container border" style="height:1000px ;">
+        <div class = 'flex flex-row-reverse  ' style="height:500px ;">
+            <img src="{{url_for('static',filename='src/study1.jpg')}}" class="h-full ">
+            <div class = 'relative grow' style="background: rgb(34,30,41);">
+                <p class = 'font-jost text-5xl text-white absolute top-36 left-20'>
+                    Welcome to our <span class = 'text-green-400'>Student Buddy</span>.
+                    <br><span class="text-2xl">All in one platform for all your student needs </span>
+                </p>
+            </div>
+        </div>
+        <div class='grid grid-cols-1' style = "height: 500px; background:#add7f6"> 
+            <div class ="grid grid-cols-2 grid-rows-2 m-10 mx-20 rounded-xl text-center items-center text-white" style = 'background: linear-gradient(to left, #b24592, #f15f79);'>
+                <a href="{{ url_for("project_page")}}" > <div  class = 'transition ease-in-out rounded-xl border-2 border-l-0 border-t-0 border-white font-jost text-5xl py-20 hover:bg-black duration-300'>Project</div></a>
+                <a href="{{ url_for("course_page")}}"> <div class = 'transition ease-in-out rounded-xl border-2 border-r-0 border-t-0 border-white font-jost text-5xl py-20 hover:bg-black duration-300'>Courses</div></a>
+                <a href="{{ url_for("news_page")}}"> <div class = 'transition ease-in-out rounded-xl border-2 border-b-0 border-l-0 border-white font-jost text-5xl py-20 hover:bg-black duration-300'>News</div></a>
+                <a href="{{ url_for("math_page")}}"> <div class = 'transition ease-in-out rounded-xl border-2 border-b-0 border-r-0 border-white font-jost text-5xl py-20 hover:bg-black duration-300'>Math</div></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

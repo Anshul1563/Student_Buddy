@@ -6,10 +6,11 @@ from flaskr.courses import Search,Edx,Links
 from flaskr.news import news_buddy
 from flaskr.math import Differentiation,Integration,deq
 from flaskr.projects import getdata,sorting,project_txt
+from flask import send_from_directory
 
 @app.route("/")
 def home_page():
-    return render_template('homepage.html')
+    return render_template('index.html')
 
 entry = ''
 
