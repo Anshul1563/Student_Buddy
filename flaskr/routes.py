@@ -1,12 +1,10 @@
-from ast import Return
-from asyncio.windows_events import NULL
 from flaskr import app
 from flask import render_template,request
 from flaskr.courses import Search,Edx,Links
 from flaskr.news import news_buddy
 from flaskr.math import Differentiation,Integration,deq
 from flaskr.projects import getdata,sorting,project_txt
-from flask import send_from_directory
+
 
 @app.route("/")
 def home_page():
